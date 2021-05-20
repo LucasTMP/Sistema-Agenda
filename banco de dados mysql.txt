@@ -1,0 +1,10 @@
+use test;
+
+CREATE TABLE Agenda(
+	AgeID int AUTO_INCREMENT primary key,
+	AgeTarefa text(500) NOT Null,
+    AgeData DATETIME Not Null,
+    AgeStatus varchar(20) Not Null
+);
+
+

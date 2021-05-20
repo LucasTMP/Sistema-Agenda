@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Web Agenda
+	</title>
+</head>
+
+<body>
+
+<h1>Bem vindo!</h1>
+<p>Web Agenda Pessoal</p>
+<p>Organizando o seu futuro, para você aproveitar o presente.</p>
+
+<fieldset>
+<legend>
+	Cadastre abaixo uma nova tarefa:
+</legend>
+
+
+
+<form name="criatarefa" method="post" action="grava.php">
+<font color="RED">
+<h1> Tarefa </h1>
+</font>
+
+<table>
+	<tr>
+	<th>Oque séra agendado?:</th>
+		<td>
+			<textarea name="texttarefa" rows="4" cols="50">Descreva aqui a sua tarefa, seu compromisso ou seu objetivo.</textarea>
+		</td>
+
+	</tr>
+	<tr>
+	<th>Determine uma data final:</th>
+		<td>
+			<input type="datetime-local" name="datatarefa" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00">
+
+		</td>
+	</tr>
+	<tr>
+</table>
+
+
+   <br>
+   <input type="button" onclick="validar()" value="Cadastrar" name="Cadastrar">
+   <input type="reset" value="Limpar" name="limpar Campos">
+   <input type="button" onclick="location.href='http://localhost/bd/consultageral.php';" value="Consultar Usuarios" />
+
+<script type="text/javascript">
+
+function validar() {
+
+	var sen1, sen2;
+
+	sen1 = document.login.txtsenha.value;
+	sen2 = document.login.txtsenhaconfi.value;
+
+if (sen1 == "" || sen2 == ""){
+	alert("Digite uma senha!");
+	document.login.txtsenha.focus();
+	document.login.txtsenha.value = "";
+	document.login.txtsenhaconfi.value = "";
+	return false ;
+}
+
+if (sen1 == sen2){
+document.login.submit();
+} else {
+alert("As senha não são iguais!");
+document.login.txtsenha.value = "";
+document.login.txtsenhaconfi.value = "";
+document.login.txtsenha.focus();
+return false ;
+}
+}
+
+</script>
+
+
+</form>
+</fieldset>
+</body>
+</html>
